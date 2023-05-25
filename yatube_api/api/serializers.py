@@ -59,11 +59,12 @@ class FollowSerializer(serializers.ModelSerializer):
     )
 
     def validate(self, data):
-        user: str = self.context['request'].user
         following: str = data['following']
 
-        if Follow.objects.filter(user__username=user,
-                                 following__username=following).exists():
+        if Follow.objects.filter(
+            user=self.context['request'].user,
+            following__username=following
+        ).exists():
             raise serializers.ValidationError(
                 {'detail': f'Вы уже подписаны на {following}.'}
             )

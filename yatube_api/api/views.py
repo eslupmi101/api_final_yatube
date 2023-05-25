@@ -1,11 +1,11 @@
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
-from rest_framework import viewsets, status
+from rest_framework import viewsets
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from posts.models import Comment, Group, Post, Follow, User
+from posts.models import Comment, Group, Post, Follow
 from .serializers import (
     CommentSerializer, GroupSerializer,
     PostSerializer, FollowSerializer
