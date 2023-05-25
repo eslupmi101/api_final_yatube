@@ -59,7 +59,7 @@ python3 manage.py runserver
 
 # Example
 
-Let's take a look at a quick example of using API Youtube. 
+Let's take a look at a quick example of using API YaTube. 
 
 First you need to create a user through Django admin.
 
