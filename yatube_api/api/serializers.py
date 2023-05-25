@@ -41,7 +41,7 @@ class CommentSerializer(serializers.ModelSerializer):
         slug_field='username',
         read_only=True
     )
-    created = serializers.DateTimeField(source='pub_date')
+    created = serializers.DateTimeField(source='pub_date', read_only=True)
 
     class Meta:
         model = Comment
