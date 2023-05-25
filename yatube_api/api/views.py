@@ -3,10 +3,9 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, filters
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.pagination import LimitOffsetPagination
-
 
 from posts.models import Comment, Group, Post, Follow
+from .paginations import CustomLimitOffsetPagination
 from .serializers import (
     CommentSerializer, GroupSerializer,
     PostSerializer, FollowSerializer
@@ -16,7 +15,7 @@ from .serializers import (
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    pagination_class = LimitOffsetPagination
+    pagination_class = CustomLimitOffsetPagination
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
