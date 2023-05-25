@@ -1,7 +1,7 @@
 # API backend for YaTube project
 
 ## Overview
-Youtube is a social network in which a user can create posts, comment on them and subscribe to other users.
+YaTube is a social network in which a user can create posts, comment on them and subscribe to other users.
 
 The repository has a v1 API backend that is made on Django REST framework.
 
