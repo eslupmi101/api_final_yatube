@@ -16,7 +16,7 @@ The repository has a v1 API backend that is made on Django REST framework.
 Clone the repository and go to it on the command line:
 
 ```
-git clone git@github.com:eslupmi101/api_final_yatube.git
+git clone https://github.com/eslupmi101/api_final_yatube.git
 ```
 
 Create and activate a virtual environment:
