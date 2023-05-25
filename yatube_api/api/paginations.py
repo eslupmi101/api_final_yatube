@@ -4,8 +4,16 @@ from rest_framework.pagination import LimitOffsetPagination
 
 class CustomLimitOffsetPagination(LimitOffsetPagination):
     def get_paginated_response(self, data):
-        if (self.get_limit(self.request) == 10
-           and self.get_offset(self.request) == 0):
+        if self.limit is None and self.offset is None:
             return Response(data)
 
         return super().get_paginated_response(data)
+
+    def paginate_queryset(self, queryset, request, view=None):
+        if (
+            request.GET.get('limit') is None
+            and request.GET.get('offset') is None
+        ):
+            return None
+
+        return super().paginate_queryset(queryset, request, view)
