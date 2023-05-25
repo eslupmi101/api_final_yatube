@@ -63,40 +63,36 @@ Let's take a look at a quick example of using API Youtube.
 
 First you need to create a user through Django admin.
 
-### Get the user's JWT token via endpoint:
+Get the user's JWT token via endpoint:
 
 ```
 api/v1/jwt/create/
-```
 
-Send to endpoint:
-
-```
 {
     'username': string,
     'password': string
 }
 ```
 
-### Get all posts:
+Get all posts:
 
 ```
 api/v1/jwt/posts/
 ```
 
-### Get posts of user:
+Get posts of user:
 
 ```
 api/v1/posts/username/
 ```
 
-### Create post (available only to authenticated users):
+Create post (available only to authenticated users):
 
 ```
 api/v1/jwt/posts/
 ```
 
-### Documentation with full functionality can be found at endpoint. 
+Documentation with full functionality can be found at endpoint. 
 
 ```
 api/v1/redoc/
