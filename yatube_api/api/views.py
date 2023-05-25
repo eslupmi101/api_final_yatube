@@ -82,7 +82,7 @@ class FollowViewSet(viewsets.ModelViewSet):
     queryset = Follow.objects.all()
     pagination_class = None
     filter_backends = (filters.SearchFilter)
-    search_fields = ('username',)
+    search_fields = ('user__username', 'following__username')
 
     def list(self, request):
         follows = self.get_queryset().filter(user=request.user)
